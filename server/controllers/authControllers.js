@@ -1,7 +1,7 @@
-import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 import jwt from 'jsonwebtoken';
 import userModel from "../models/userModel.js";
+import transporter from "../config/nodeMailer.js";
 
 
 export const register = async (req, res) => {
@@ -36,7 +36,18 @@ export const register = async (req, res) => {
             maxAge: 7 * 24 * 60 * 60 * 1000
         });
 
-        return res.json({success: true})
+        // sending welcome mail 
+
+        const mailOptions = {
+            from : process.env.SENDER_EMAIL,
+            to : email,
+            subject : "Welcome to Heltron",
+            text : `Welcome to Heltron website, your account has been created using the email ${email}`
+        }
+
+        await transporter.sendMail(mailOptions);
+
+        return res.json({success: true, message: "New account created"})
 
 
     } catch (error) {
