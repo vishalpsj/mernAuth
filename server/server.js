@@ -6,11 +6,11 @@ import connectDb from "./config/mongodb.js";
 import authRouter from "./routes/authRoutes.js"
 
 const app = express()
+app.use(express.json())
 const PORT = process.env.PORT || 4000;
 
 connectDb()
 
-app.use(express.json())
 app.use(cookieParser())
 app.use(cors({credentials : true}))
 
