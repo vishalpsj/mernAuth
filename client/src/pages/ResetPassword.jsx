@@ -153,9 +153,9 @@ const ResetPassword = () => {
               type="password"
               placeholder='Enter new password'
               required
-              value={password}
+              value={newPassword}
               className='w-full outline-0 px-1'
-              onChange={e => setPassword(e.target.value)}
+              onChange={e => setNewPassword(e.target.value)}
             />
           </div>
           <button className='bg-gradient-to-r from-lime-700 to-lime-900 py-2 text-white/80 font-bold rounded-md hover:rounded-2xl transition-all duration-150 ease-linear cursor-pointer mt-5 w-full'>Submit</button>

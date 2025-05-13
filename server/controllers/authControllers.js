@@ -212,7 +212,7 @@ export const resetPasswordOtp = async (req, res) => {
         const mailOptions = {
             from: process.env.SENDER_EMAIL,
             to: user.email,
-            subject: "OTP for resert Password",
+            subject: "OTP to reset Password",
             text: `Your OTP to reset password is ${otp}, please don't share the OTP with anyone. This OTP will Expire with in 10 minutes.`
         };
 
@@ -266,7 +266,7 @@ export const verifyResetPassword = async (req, res) => {
 
         await transporter.sendMail(mailOptions);
 
-        return res.json({ success: true, message: "Password reseted successfully" });
+        return res.json({ success: true, message: "Password reset successfully." });
 
     } catch (error) {
         return res.json({ success: false, message: error.message });
