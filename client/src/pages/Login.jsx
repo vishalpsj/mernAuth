@@ -51,8 +51,9 @@ const Login = () => {
   return (
       <>
         <NavbarForRegister />
-        <div className='flex justify-center items-center h-[88dvh]'>
+        <div className='flex justify-center items-center h-screen'>
           <div className='bg-[#9ddf85] w-full max-w-[450px] flex flex-col gap-5 items-center py-5 rounded-xl '>
+
             <div className='flex flex-col gap-1 items-center'>
               <h1 className='text-4xl font-bold text-lime-700'>{status === "Sign Up" ? "Create account" : "Login"}</h1>
               <h3 className='text-lg '> {status === "Sign Up" ? "Create new account" : "Login to your account"} </h3>
@@ -70,6 +71,7 @@ const Login = () => {
                     value={name}
                     onChange={e => setName(e.target.value)}
                     placeholder='Fullname'
+                    required
                     className='outline-0 px-2 text-black w-full' />
                 </div>)}
 
@@ -78,10 +80,11 @@ const Login = () => {
                 className='flex gap-2 items-center text-black/70 bg-[#659853] px-3 py-1 rounded-md'>
                 <IoMdMail />
                 <input
-                  type="text"
+                  type="email"
                   value={email}
                   onChange={e => setEmail(e.target.value)}
                   placeholder='Email'
+                  required
                   className='outline-0 px-2 text-black w-full' />
               </div>
 
@@ -93,6 +96,7 @@ const Login = () => {
                   value={password}
                   onChange={e => setPassword(e.target.value)}
                   placeholder="Password"
+                  required
                   className='outline-0 px-2 text-black w-full' />
               </div>
 

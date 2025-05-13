@@ -218,7 +218,7 @@ export const resetPasswordOtp = async (req, res) => {
 
         await transporter.sendMail(mailOptions);
 
-        return res.json({ success: true, message: "OTP to resert password successfully sent on your Email" });
+        return res.json({ success: true, message: "OTP sent to your email" });
 
 
     } catch (error) {

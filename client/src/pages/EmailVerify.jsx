@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import NavbarForRegister from '../components/NavBarForRegister'
 import { toast } from "react-toastify"
 import { AppContext } from '../context/AppContext'
@@ -11,7 +11,7 @@ const EmailVerify = () => {
 
   const navigate = useNavigate()
 
-  const { backendUrl, getUserData } = useContext(AppContext)
+  const { backendUrl, getUserData, isLoggedIn, userData } = useContext(AppContext)
 
   const inputRefs = React.useRef([])
 
@@ -59,6 +59,10 @@ const EmailVerify = () => {
       toast.error(error.message)
     }
   }
+
+  useEffect(() => {
+    isLoggedIn && userData && userData.isAccountVerified && navigate('/')
+  }, [isLoggedIn, navigate, userData])
 
   return (
     <>
