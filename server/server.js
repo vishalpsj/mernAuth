@@ -11,9 +11,10 @@ app.use(express.json())
 const PORT = process.env.PORT || 4000;
 
 connectDb()
+const allowedOrigins = ['http://localhost:5173']
 
 app.use(cookieParser())
-app.use(cors({credentials : true}))
+app.use(cors({ origin : allowedOrigins, credentials : true}))
 
 // API endpoints 
 app.get("/", (req, res) => res.send("Project succeccfull started."))
