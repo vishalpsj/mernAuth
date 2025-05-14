@@ -51,7 +51,7 @@ const Login = () => {
   return (
       <>
         <NavbarForRegister />
-        <div className='flex justify-center items-center h-screen'>
+        <div className='flex justify-center items-center h-screen m-5 '>
           <div className='bg-[#9ddf85] w-full max-w-[450px] flex flex-col gap-5 items-center py-5 rounded-xl '>
 
             <div className='flex flex-col gap-1 items-center'>

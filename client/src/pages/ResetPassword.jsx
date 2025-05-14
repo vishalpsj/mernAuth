@@ -88,7 +88,7 @@ const ResetPassword = () => {
 
         <form
           onSubmit={handleSubmitEmail}
-          className='bg-[#9ddf85] w-full max-w-[450px] flex flex-col gap-1 items-center py-5 rounded-xl px-10 '>
+          className='bg-[#9ddf85] w-full max-w-[450px] flex flex-col gap-1 items-center py-5 rounded-xl px-10 m-5 '>
           <h1 className='text-4xl font-bold text-lime-700'>Reset Password</h1>
           <p className='text-md '>Enter your registered email address</p>
 
@@ -113,7 +113,7 @@ const ResetPassword = () => {
 
         <form
           onSubmit={handleOtpSubmit}
-          className='bg-[#9ddf85] w-full max-w-[450px] flex flex-col gap-1 items-center py-5 rounded-xl px-10 '>
+          className='bg-[#9ddf85] w-full max-w-[450px] flex flex-col gap-1 items-center py-5 rounded-xl px-10 m-5 '>
           <h1 className='text-3xl font-bold text-lime-700'>Reset password OTP</h1>
           <h3 className='text-md '> Enter the 6 digit code send to your email id </h3>
 
@@ -143,7 +143,7 @@ const ResetPassword = () => {
 
         <form 
         onSubmit={handleNewPasswordSubmit}
-        className='bg-[#9ddf85] w-full max-w-[450px] flex flex-col gap-1 items-center py-5 rounded-xl px-10'>
+        className='bg-[#9ddf85] w-full max-w-[450px] flex flex-col gap-1 items-center py-5 rounded-xl px-10 m-5'>
           <h1 className='text-4xl font-bold text-lime-700'>New Password</h1>
           <p className='text-md '>Enter the new password below</p>
 

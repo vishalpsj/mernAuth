@@ -11,17 +11,17 @@ const Header = () => {
     return (
         <>
             <div className='flex w-full h-screen justify-center items-center'>
-                <div className='flex flex-col sm:flex-row items-center justify-center gap-15 w-full max-w-3/4'>
-                    <div>
+                <div className='flex flex-col sm:flex-row items-center justify-center gap-15 w-full max-w-[1000px]  min-h-screen sm:px-10'>
+                    <div className='hidden sm:flex'>
                         <img src={assets.boy} alt="" />
                     </div>
 
-                    <div className='flex flex-col items-center justify-center gap-10 bg-black/10 h-full backdrop-blur-md rounded-3xl py-15'>
-                        <div className='flex flex-col gap-2'>
-                            <h3 className='text-5xl font-bold text-white/80'>Welcome to Heltron</h3>
-                        <h4 className='text-2xl font-medium text-white/80'>Hello {userData ? userData.name : 'User'}</h4>
+                    <div className='flex flex-col items-center justify-center gap-10 bg-black/10 h-full backdrop-blur-md sm:rounded-3xl py-15 min-h-screen sm:min-h-fit '>
+                        <div className='flex flex-col gap-2 px-3 '>
+                            <h3 className='text-4xl md:text-5xl font-bold text-white/80 '>Welcome to Heltron</h3>
+                        <h4 className='text-xl md:text-2xl font-medium text-white/80'>Hello {userData ? userData.name : 'User'}</h4>
                         </div>
-                        <p className='text-md w-4/5 text-white/90'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore eligendi deleniti minima quia nulla possimus amet architecto nostrum cupiditate.</p>
+                        <p className='text-md w-full md:w-4/5 px-3 text-justify text-white/90'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore eligendi deleniti minima quia nulla possimus amet architecto nostrum cupiditate.</p>
 
                         <div>
                             {userData ? '' : <button

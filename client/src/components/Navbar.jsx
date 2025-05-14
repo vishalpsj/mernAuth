@@ -40,10 +40,10 @@ const Navbar = () => {
     }
     return (
         <>
-            <nav className="fixed top-0 w-full px-15 py-5 flex justify-between items-center">
+            <nav className="fixed top-0 w-full px-5 sm:px-10 md:px-15 py-5 flex justify-between items-center z-30">
                 <span
                     onClick={() => navigate('/')}
-                    className='text-[#659853] text-2xl font-bold cursor-pointer hover:text-white/70 transition-all duration-150 ease-linear'>Heltron</span>
+                    className='text-[#a3d193] text-2xl font-bold cursor-pointer hover:text-white/80 transition-all duration-150 ease-linear'>Heltron</span>
 
                 {userData ? <div className='bg-lime-900 rounded-full h-10 w-10 flex justify-center items-center text-white/80 text-xl font-bold border-2 border-white/60 relative group '>{userData.name[0].toUpperCase()}
                     <div className='absolute hidden group-hover:block top-3 -right-10 z-10 text-black rounded pt-10'>

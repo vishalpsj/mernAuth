@@ -73,7 +73,7 @@ const EmailVerify = () => {
           <form
             onSubmit={handleFormSubmit}
             className='flex flex-col gap-1 items-center'>
-            <h1 className='text-3xl font-bold text-lime-700'>Email Verify OTP</h1>
+            <h1 className='text-3xl font-bold text-lime-700 m-5'>Email Verify OTP</h1>
             <h3 className='text-md '> Enter the 6 digit code send to your email id </h3>
 
             <div className='flex justify-between my-5 gap-1.5'>
