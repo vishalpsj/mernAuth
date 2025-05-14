@@ -2,6 +2,7 @@ import bcrypt from "bcryptjs";
 import jwt from 'jsonwebtoken';
 import userModel from "../models/userModel.js";
 import transporter from "../config/nodeMailer.js";
+import { generateEmailVerificationEmail, generatePasswordResetEmail, generatePasswordResetSuccessEmail, generateWelcomeEmail} from "../config/emailTemplate.js";
 
 // Register Controller
 export const register = async (req, res) => {
@@ -34,7 +35,8 @@ export const register = async (req, res) => {
             from: process.env.SENDER_EMAIL,
             to: email,
             subject: "Welcome to Heltron",
-            text: `Welcome to Heltron website, your account has been created using the email ${email}`
+            // text: `Welcome to Heltron website, your account has been created using the email ${email}`,
+            html : generateWelcomeEmail(user),
         };
 
         await transporter.sendMail(mailOptions);
@@ -125,7 +127,8 @@ export const sendVerifyOtp = async (req, res) => {
             from: process.env.SENDER_EMAIL,
             to: user.email,
             subject: "Account verification OTP",
-            text: `Your OTP is ${otp}. Verify your account using this OTP.`
+            // text: `Your OTP is ${otp}. Verify your account using this OTP.`
+            html : generateEmailVerificationEmail(user, otp)
         };
 
         await transporter.sendMail(mailOptions);
@@ -213,7 +216,8 @@ export const resetPasswordOtp = async (req, res) => {
             from: process.env.SENDER_EMAIL,
             to: user.email,
             subject: "OTP to reset Password",
-            text: `Your OTP to reset password is ${otp}, please don't share the OTP with anyone. This OTP will Expire with in 10 minutes.`
+            // text: `Your OTP to reset password is ${otp}, please don't share the OTP with anyone. This OTP will Expire with in 10 minutes.`
+            html : generatePasswordResetEmail(user, otp)
         };
 
         await transporter.sendMail(mailOptions);
@@ -261,7 +265,9 @@ export const verifyResetPassword = async (req, res) => {
             from: process.env.SENDER_EMAIL,
             to: user.email,
             subject: "Successfully reseted password",
-            text: `Congratulations, your password has been reseted successfully.`
+            // text: `Congratulations, your password has been reseted successfully.`
+            html : generatePasswordResetSuccessEmail(user)
+
         };
 
         await transporter.sendMail(mailOptions);
