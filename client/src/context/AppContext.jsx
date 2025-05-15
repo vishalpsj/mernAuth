@@ -7,7 +7,7 @@ export const AppContext = createContext()
 export const AppContextProvider = (props) => {
 
     axios.defaults.withCredentials = true;
-    const backendUrl = import.meta.env.VITE_BACKEND_URL || 'https://mernauth-backend-uvxl.onrender.com';
+    const backendUrl = 'https://mernauth-backend-uvxl.onrender.com';
 
     const [isLoggedIn, setIsLoggedIn] = useState(false)
     const [userData, setUserData] = useState(false)

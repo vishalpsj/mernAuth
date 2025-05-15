@@ -11,7 +11,7 @@ app.use(express.json())
 const PORT = process.env.PORT || 4000;
 
 connectDb()
-const allowedOrigins = ['http://localhost:5173', 'https://mernauth-vsp.netlify.app']
+const allowedOrigins = ['https://mernauth-frontend-xjpd.onrender.com']
 
 app.use(cookieParser())
 app.use(cors({ origin : allowedOrigins, credentials : true}))
