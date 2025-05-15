@@ -4,7 +4,7 @@ import { IoMdMail } from "react-icons/io";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
-import axiox from "axios";
+import axios from "axios";
 import { toast } from 'react-toastify';
 import NavbarForRegister from '../components/NavBarForRegister';
 
@@ -21,10 +21,10 @@ const Login = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault()
     try {
-      axiox.defaults.withCredentials = true;
+      axios.defaults.withCredentials = true;
 
       if (status === "Sign Up") {
-        const { data } = await axiox.post(backendUrl + '/api/auth/register', { name, email, password })
+        const { data } = await axios.post(backendUrl + '/api/auth/register', { name, email, password }, {withCredentials : true})
         if (data.success) {
           setIsLoggedIn(true)
           getUserData()
@@ -34,7 +34,7 @@ const Login = () => {
         }
 
       } else {
-        const { data } = await axiox.post(backendUrl + '/api/auth/login', { email, password })
+        const { data } = await axios.post(backendUrl + '/api/auth/login', { email, password }, {withCredentials : true})
         if (data.success) {
           setIsLoggedIn(true)
           getUserData()
